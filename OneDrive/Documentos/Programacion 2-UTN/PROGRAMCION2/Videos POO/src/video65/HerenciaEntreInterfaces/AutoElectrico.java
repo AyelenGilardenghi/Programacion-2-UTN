@@ -10,7 +10,7 @@ package video65.HerenciaEntreInterfaces;
  */
 public class AutoElectrico  implements  VehiculoRecargable{
 
- //todo cambio guardo
+private String cambioo;
   
     
     
