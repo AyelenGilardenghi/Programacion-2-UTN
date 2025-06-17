@@ -11,11 +11,7 @@ package video65.HerenciaEntreInterfaces;
 public class AutoElectrico  implements  VehiculoRecargable{
 
  //todo cambio guardo
-    private String marca;
-
-    public AutoElectrico(String marca) {
-        this.marca = marca;
-    }
+  
     
     
     @Override
