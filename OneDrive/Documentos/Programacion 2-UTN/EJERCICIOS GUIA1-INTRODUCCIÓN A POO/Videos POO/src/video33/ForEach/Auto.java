@@ -1,0 +1,32 @@
+package video33.ForEach;
+
+import video32.AtributosTipoColeccion.*;
+import video30.ArrayList.*;
+import video20.STATIC.*;
+
+public class Auto {
+    private String patente;
+    private String color;
+
+    public Auto(String patente, String color) {
+        this.patente = patente;
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto{" + "patente=" + patente + ", color=" + color + '}';
+    }
+   
+
+   
+    
+
+   
+    
+
+    
+    
+    
+    
+}
