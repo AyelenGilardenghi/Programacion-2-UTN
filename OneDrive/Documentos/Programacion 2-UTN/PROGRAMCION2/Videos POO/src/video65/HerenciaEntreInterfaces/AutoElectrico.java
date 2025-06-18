@@ -11,6 +11,7 @@ package video65.HerenciaEntreInterfaces;
 public class AutoElectrico  implements  VehiculoRecargable{
 
 private String cambioo;
+
   
     
     
