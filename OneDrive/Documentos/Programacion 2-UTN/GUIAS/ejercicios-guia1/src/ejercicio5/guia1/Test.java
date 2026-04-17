@@ -24,11 +24,11 @@ public class Test {
        System.out.print("Suma de FRACCIONES: ");
        fraccion1.mostrar();
        fraccion1.tipoFraccion();
-       /*
+       
        fraccion1.simplificar();
        System.out.print("FRACCION SIMPLIFICADA: ");
        fraccion1.mostrar();
-       */
+       
        fraccion2.tipoFraccion();
        fraccion3.tipoFraccion();
        fraccion4.tipoFraccion();
