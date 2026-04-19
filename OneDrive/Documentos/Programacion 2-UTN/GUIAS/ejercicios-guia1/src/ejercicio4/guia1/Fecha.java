@@ -60,37 +60,7 @@ public class Fecha {
     }
    
     
-    /*private int obtenerMaximoDias() {
-    // El primer 0 es para que el mes 1 coincida con la posición 1
-    int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    
-    if (this.mes >= 1 && this.mes <= 12) {
-        return diasPorMes[this.mes];
-    }
-    return 31; // Por seguridad
-}
-        
-        private int obtenerMaximoDias() {
-    int maximo;
-
-    switch (this.mes) {
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            maximo = 30;
-            break;
-        case 2:
-            maximo = 28;
-            break;
-        default:
-            maximo = 31;
-            break;
-    }
-
-    return maximo;
-    }*/
-
+   
    
 
     
