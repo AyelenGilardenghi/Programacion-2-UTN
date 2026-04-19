@@ -6,6 +6,7 @@ package ejercicio9.guia1;
 
 import ejercicio1.guia1.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  *
@@ -14,17 +15,26 @@ import java.time.LocalDate;
 public class Persona {
     private String nombre;
     private String apellido;
-    private int anioNacimiento;
+    private LocalDate fechaNacimiento;
+    private Domicilio domicilio;
 
-    public Persona(String nombre, String apellido, int anioNacimiento) {
+    public Persona(String nombre, String apellido, LocalDate fechaNacimiento, Domicilio domicilio) {
         setNombre(nombre);
         setApellido(apellido);
-        setAnioNacimiento(anioNacimiento);
+        setFechaNacimiento(fechaNacimiento);
+        setDomicilio(domicilio);
     }
 
-    public void setAnioNacimiento(int anioNacimiento) {
-        if(anioNacimiento <= LocalDate.now().getYear()){
-            this.anioNacimiento = anioNacimiento;
+    public void setDomicilio(Domicilio domicilio) {
+        if(domicilio != null){
+            this.domicilio = domicilio;
+        }
+    }
+   
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        if(fechaNacimiento != null && fechaNacimiento.isBefore(LocalDate.now())){
+            this.fechaNacimiento = fechaNacimiento;
         }
     }
    
@@ -64,7 +74,15 @@ public class Persona {
     }
     //OBTENER SU EDAD ACTUAL
     public int getEdadActual(){
-        return LocalDate.now().getYear()- anioNacimiento; //bien
+        return LocalDate.now().getYear()- this.fechaNacimiento.getYear(); //bien
+    }
+    /* EDAD ACTUAL SI YA LA CUMPLI O NO
+    import java.time.Period; // Necesitás este import
+    public int getEdadActual2() {
+        return Period.between(this.fechaNacimiento, LocalDate.now()).getYears();
+    }*/
+public int getEdadActual2() {
+        return Period.between(this.fechaNacimiento, LocalDate.now()).getYears();
     }
     //SABER SI ES MAYOR QUE UNA EDAD DADA
     private boolean calculoMayorQue(int edad ){
@@ -80,8 +98,10 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", anioNacimiento=" + anioNacimiento + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + '}';
     }
+
+    
         
     
     
