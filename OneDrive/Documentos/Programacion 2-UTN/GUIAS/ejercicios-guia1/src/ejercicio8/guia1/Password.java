@@ -13,55 +13,54 @@ import java.util.Random;
 public class Password {
     private static final int MIN_LARGO_PASS_FUERTE=8;
     private static final int MIN_NUEVO_PASS=6;
-    private  String password;
+    private  String valor;
     
-   
+     public Password(int longuitud) {
+        this.valor= generarAleatorio(longuitud);
+    }
 
     public Password(String password) {
-        this.password = password;
+        this.valor = password;
     }
+ 
+  
     
-    public Password() {
-        this.password= generarAleatorio(MIN_LARGO_PASS_FUERTE);
-    }
     public void setPassword(String password) {
         if(password!= null){
-        this.password = password;
+        this.valor = password;
         }
     }
     
     public String getPassword() {
-        return password;
+        return valor;
     }
     
     public boolean esFuerte(){
-        return  this.password.length()>= MIN_LARGO_PASS_FUERTE;
+        return  this.valor.length()>= MIN_LARGO_PASS_FUERTE;
     }
-    //¿ACA DEBERIA VALIDAR QUE SEA !=NULL TAMBIEN?CREO QUE NO PORQUE YA SEA EN SET O NUEVO VALOR ESTOY DICEINDO QUE NO SEA NULL
+    
     
     public boolean nuevoValor(String nuevo){
         boolean nuevoValido= (nuevo != null && nuevo.length() >= MIN_NUEVO_PASS);
         if(nuevoValido){
-            this.password = nuevo;
+            this.valor = nuevo;
         }      
         return nuevoValido ;
     }
-    /* 1)Llamaste a generarAleatorio(5).
-       2) Como 5 es menor que 6, tu método hizo lo que le pediste: devolvió null.
-       3)Ese null se lo pasaste directamente al método nuevoValor.
-       4)Dentro de nuevoValor, Java intentó hacer nuevo.length(). Pero como nuevo es null (la nada misma), Java dice: "Che, no puedo medirle el largo a la nada" y ¡PUM!, tira el error.*/
+  
     
-    public String generarAleatorio(int cant){
+    private String generarAleatorio(int cant){
         String passGenerado="";
         Random random =new Random();
-        if(cant>= MIN_NUEVO_PASS){
+        if( cant>= MIN_NUEVO_PASS){
             for(int i=0; i<cant;i++){
-                passGenerado += random.nextInt(10);
+                //passGenerado += random.nextInt(10);
+                 char caracter=( char)random.nextInt(32,125);
+                passGenerado += caracter;
             }
         }else{
             passGenerado= null;
         }
       return passGenerado;
     }
-    // PODRIA HACER QUE LO QUE GENERA ALEATORIAMENTE SE GUARDE EN NUEVO VALOR PERO NO ES LO QUE PIDE EL EJER
-}
+} 
