@@ -5,6 +5,9 @@
 package ejercicio4.guia1;
 
 public class Fecha {
+    private static final int DIA_NAVIDAD= 25;
+    private static final int MES_NAVIDAD= 12;
+          
     private int dia;
     private int mes;
     private int anio;
@@ -16,7 +19,9 @@ public class Fecha {
     }
 
     public void setAnio(int anio) {
-        this.anio = anio;
+        if(anio >0 && anio < 9999){
+            this.anio = anio;
+        }
     }
     public void setMes(int mes) {
         if(mes >= 1 && mes <=12){
@@ -29,6 +34,14 @@ public class Fecha {
         }else{
             System.out.println("El dia ingresado no es valido para el mes "+ mes);
             }
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public int getMes() {
+        return mes;
     }
     
     private int  obtenerMaxDias(){
@@ -48,15 +61,19 @@ public class Fecha {
         return String.format("%02d/%02d/%d", dia, mes, anio);
     }
    
-    
+    private boolean navidad(){
+        return getDia()== DIA_NAVIDAD && getMes() == MES_NAVIDAD;
+    }
     public void esNavidad(){
       
-        if(dia!= 25 || mes!=12){ 
+        //if(dia!= 25 || mes!=12){ 
+        if(!navidad()){ 
             System.out.print("NO ");
         }
         System.out.println("ES NAVIDAD");
     }
-
+//FALTA SUMAR UN MES
+    
     }
    
     
