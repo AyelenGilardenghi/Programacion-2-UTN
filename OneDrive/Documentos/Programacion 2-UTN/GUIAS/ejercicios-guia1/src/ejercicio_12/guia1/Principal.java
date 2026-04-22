@@ -7,7 +7,7 @@ package ejercicio_12.guia1;
 public class Principal {
 
     public static void main(String[] args) {
-        // Método a resolver...
+        ImpresoraMonocromatica imp = new ImpresoraMonocromatica();
     }
 
 }
