@@ -1,5 +1,7 @@
 package ejercicio_12.guia1;
 
+import java.time.LocalDate;
+
 /**
 * Código generado por la app UXFtoJava by Charly Cimino
 * @see https://github.com/CharlyCimino/uxf-to-java
@@ -7,7 +9,7 @@ package ejercicio_12.guia1;
 public class Principal {
 
     public static void main(String[] args) {
-        // Método a resolver...
+   
     }
 
 }
