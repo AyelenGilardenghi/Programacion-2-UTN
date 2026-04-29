@@ -17,12 +17,10 @@ public class CartuchoDeTinta {
         return nivelDeTinta;
     }
     
-    private boolean validarcantCaracteres(int cant){
-        return cant > 0;
-    }
-    public int cantSegunCantCaracteres(int cantCaracateres){
+    
+    public  int cantSegunCantCaracteres(int cantCaracateres){
         int cantTintaAUsar=0;
-        if(validarcantCaracteres(cantCaracateres) ){
+        if(cantCaracateres>0 ){
             cantTintaAUsar= (int)Math.ceil((double)cantCaracateres/CANT_CARATERES_X_PUNTO);
         }
         return cantTintaAUsar;

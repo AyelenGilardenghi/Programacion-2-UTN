@@ -31,7 +31,7 @@ public class Principal {
         miImpresora.imprimir(miDoc);
 
         // Prueba 2: Encender e intentar imprimir sin hojas (debería tirar tu Exception)
-        miImpresora.setEstaEncendida(true); // ¡Acordate de tener el setter o ponerlo en true!
+        miImpresora.encender(); // 
         System.out.println("\n> Intento 2 (Encendida pero sin hojas):");
         try {
             miImpresora.imprimir(miDoc);

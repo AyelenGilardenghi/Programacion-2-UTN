@@ -44,9 +44,10 @@ public class Documento {
         return titulo.length()+cuerpo.length()+fecha.toString().length();
     }
     public void imprimir(){
-        System.out.println(fecha+"          ***"+ titulo+ "***\n" );
+        System.out.println(fecha +"\t\t***"+ titulo+ "***\n" );
         System.out.println(cuerpo);
-    }
+    }// tendriqa que wer tostring
 
 
 }
+//creame un test para probar y comprobar que anden todos los metodos

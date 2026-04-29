@@ -5,30 +5,35 @@ package ejercicio_12.guia1;
 * @see https://github.com/CharlyCimino/uxf-to-java
 */
 public class ImpresoraMonocromatica {
-    private static final int CANT_CARACT_POR_HOJA = 20;
+    private static final int CANT_CARACT_POR_HOJA = 20;// es  bandeja
     private boolean estaEncendida;
     private CartuchoDeTinta cartucho;
-    private BandejaDeHojas hoja;
+    private BandejaDeHojas bandeja;
         
 
     public ImpresoraMonocromatica(CartuchoDeTinta cartucho, BandejaDeHojas hoja) {
-        this.estaEncendida = false;
+       // this.estaEncendida = false;por feault esta
         this.cartucho = cartucho;
-        this.hoja = hoja;
+        this.bandeja = hoja;
     }
 
-    public void setEstaEncendida(boolean estaEncendida) {
-        this.estaEncendida = estaEncendida;
+    public void encender(){
+       // estaEncendida=true;
+       estaEncendida = !estaEncendida;
     }
 
 
-    
+    /**
+     * 
+     * @param cantCaracteres
+     * @return 
+     */
     private int nivelSegunCantCaracteres(int cantCaracteres) {
         return cartucho.cantSegunCantCaracteres(cantCaracteres);   
     }
 
    public void recargarBandeja(int cantHojas) {
-    hoja.recargar(cantHojas);
+    bandeja.recargar(cantHojas);
     }
 
     public void imprimir(Documento documento) {
@@ -42,16 +47,16 @@ public class ImpresoraMonocromatica {
           if( hayhojas() ){
                throw new RuntimeException("NO HAY HOJAS EN LA BANDEJA");
           }     
-          if( hoja.getCantHojas()< hojasNecesariasParaImprimir){
+          if( bandeja.getCantHojas()< hojasNecesariasParaImprimir){
               System.out.println("impriminendo...");
-              hoja.usarHojas(hoja.getCantHojas());
+              bandeja.usarHojas(bandeja.getCantHojas());
               System.out.println("BANDEJA VACIA");
               System.out.println("RECARGANDO.......");
               recargarBandeja(hojasNecesariasParaImprimir);
             }    
         
               cartucho.actulizarNivelTinta(documento.cantCaracteresCuerpo());
-              hoja.usarHojas(hojasNecesariasParaImprimir);
+              bandeja.usarHojas(hojasNecesariasParaImprimir);
               
               documento.imprimir();
           
@@ -63,6 +68,6 @@ public class ImpresoraMonocromatica {
     }
     
     private boolean hayhojas(){
-        return hoja.getCantHojas()==0;
+        return bandeja.getCantHojas()==0;
     }
 }

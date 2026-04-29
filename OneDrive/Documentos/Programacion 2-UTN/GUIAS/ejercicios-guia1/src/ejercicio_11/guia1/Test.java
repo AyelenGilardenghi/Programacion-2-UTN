@@ -9,5 +9,7 @@ package ejercicio_11.guia1;
  * @author Gilar
  */
 public class Test {
-    
+    public static void main(String[] args) {
+       
+}
 }

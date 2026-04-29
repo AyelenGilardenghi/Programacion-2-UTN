@@ -1,0 +1,32 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>70</y><w>210</w><h>190</h></coordinates><panel_attributes>ImpresoraMonocromatica
+--
+-estaEncendida:boolean
+
+
+--
+-nivelSegunCantCaracteres(int):int 
++recargarBandeja(int):void
++imprimir(Documento):void </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>80</y><w>210</w><h>190</h></coordinates><panel_attributes>Documento
+--
+-fecha:LocalDate
+-titulo: String
+-cuerpo: String
+--
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>130</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>380</y><w>230</w><h>100</h></coordinates><panel_attributes>CartuchoDeTinta
+--
+-color: String
+-nivelDeTinta: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>250</y><w>80</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+-cartucho</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>380</y><w>210</w><h>140</h></coordinates><panel_attributes>BandejaDeHojas
+--
+-cantHojas: int
+
+--
++recargarBandeja(int):void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>250</y><w>60</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+-hoja</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element></diagram>

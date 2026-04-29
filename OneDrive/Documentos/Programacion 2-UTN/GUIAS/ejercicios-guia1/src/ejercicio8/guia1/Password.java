@@ -15,20 +15,28 @@ public class Password {
     private static final int MIN_NUEVO_PASS=6;
     private  String valor;
     
+     public Password() {
+        this.valor= generarAleatorio(8);
+    }
+   
      public Password(int longuitud) {
+        
         this.valor= generarAleatorio(longuitud);
     }
-
-    public Password(String password) {
-        this.valor = password;
+    public Password(String valor) {
+       // this.valor = valor;
+        nuevoValor(valor);
     }
  
   
     
-    public void setPassword(String password) {
-        if(password!= null){
-        this.valor = password;
+    private void setPassword(String valor) {// privado 
+        if(valor!= null){
+        this.valor = valor;
         }
+        //if(nuevo == null || nuevo.length() < MIN_NUEVO_PASS){
+        //throw new RunTimeException("La clave no debe ser 
+        //}
     }
     
     public String getPassword() {
@@ -45,6 +53,7 @@ public class Password {
         if(nuevoValido){
             this.valor = nuevo;
         }      
+       
         return nuevoValido ;
     }
   
@@ -56,10 +65,10 @@ public class Password {
             for(int i=0; i<cant;i++){
                 //passGenerado += random.nextInt(10);
                  char caracter=( char)random.nextInt(32,125);
-                passGenerado += caracter;
+                passGenerado += caracter;//stringBuilder en vez de acumulare porque lo hace mas rapido
             }
         }else{
-            passGenerado= null;
+            passGenerado= null;// no usar null cambiarlo por el pointer
         }
       return passGenerado;
     }
