@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class Principal {
 
     public static void main(String[] args) {
+
    // 1. Creamos los "ingredientes" (Objetos)
         CartuchoDeTinta miCartucho = new CartuchoDeTinta(); // Empieza con 100
         BandejaDeHojas miBandeja = new BandejaDeHojas();   // Empieza con 0
@@ -49,6 +50,9 @@ public class Principal {
         System.out.println("\n--- ESTADO FINAL ---");
         System.out.println("Tinta restante: " + miCartucho.getNivelDeTinta());
         System.out.println("Hojas en bandeja: " + miBandeja.getCantHojas());
+
+       // ImpresoraMonocromatica imp = new ImpresoraMonocromatica();
+
     }
     
 
